@@ -12,7 +12,7 @@
  *
  */
 
-rootProject.name = "..."
+rootProject.name = "template"
 
 // this is needed to have access to snapshot builds of plugins
 pluginManagement {
