@@ -13,7 +13,7 @@ Select "Use this template > Create a new repository". See the [GitHub guide](htt
 
 ### 2. Configure secrets
 
-The default workflows need the following secrets:
+The default workflows require the following secrets:
 
 | Secret                   | Workflow(s)                                                                                                                                                                          | Comment                         |
 |:-------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------|
@@ -36,12 +36,12 @@ Update (at least) the following files:
 ### 4. Add content
 
 Fill or delete:
-- [ ] [core](): Contains all absolutely essential building that is necessary to run the component.
-- [ ] [extensions](): This contains code that extends the component's core functionality with technology-specific code.
-- [ ] [launchers](): Launchers are essentially EDC packages that are runnable, e.g., gradle buildfile, Dockerfile
-- [ ] [spi](): This is the primary extension point for the code. It contains all necessary interfaces that need to be implemented
+- [ ] [core](core/): Contains all absolutely essential building that is necessary to run the component.
+- [ ] [extensions](extensions/): This contains code that extends the component's core functionality with technology-specific code.
+- [ ] [launchers](launchers/): Launchers are essentially EDC packages that are runnable, e.g., gradle buildfile, Dockerfile
+- [ ] [spi](spi/): This is the primary extension point for the code. It contains all necessary interfaces that need to be implemented
   as well as essential model classes and enums. Basically, the `spi` modules defines the extent to what users can customize and extend the code.
-- [ ] [system-tests](): The system tests verify the end-to-end deployment of a component. They can be run locally (using Docker, Kubernetes) or in a pipeline.
+- [ ] [system-tests](system-tests/): The system tests verify the end-to-end deployment of a component. They can be run locally (using Docker, Kubernetes) or in a pipeline.
 
 
 ## Documentation
