@@ -7,5 +7,37 @@ updates:
       interval: "weekly" # default = monday
     open-pull-requests-limit: 5
     labels:
-      - "dependencies"
+      - "dependabot"
       - "github_actions"
+
+  # maintain dependencies for Gradle
+  - package-ecosystem: "gradle" # checks build.gradle(.kts) and settings.gradle(.kts)
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependabot"
+      - "java"
+    ignore:
+      - dependency-name: "org.eclipse.edc:edc-versions"
+
+  # Docker CP
+  - package-ecosystem: "docker"
+    target-branch: main
+    directory: "./runtimes/controlplane/src/main/docker/"
+    labels:
+      - "dependabot"
+      - "docker"
+    schedule:
+      interval: "weekly"
+
+  # Docker DP
+  - package-ecosystem: "docker"
+    target-branch: main
+    directory: "./runtimes/dataplane/src/main/docker/"
+    labels:
+      - "dependabot"
+      - "docker"
+    schedule:
+      interval: "weekly"

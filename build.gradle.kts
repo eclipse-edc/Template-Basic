@@ -16,8 +16,6 @@ plugins {
     `java-library`
 }
 
-val scmUrl: String by project
-val scmConnection: String by project
 val annotationProcessorVersion: String by project
 val metaModelVersion: String by project
 
@@ -34,7 +32,7 @@ allprojects {
     // configure which version of the annotation processor to use. defaults to the same version as the plugin
     configure<org.eclipse.edc.plugins.autodoc.AutodocExtension> {
         processorVersion.set(annotationProcessorVersion)
-        outputDirectory.set(project.buildDir)
+        outputDirectory.set(project.layout.buildDirectory.asFile)
     }
 
     configure<org.eclipse.edc.plugins.edcbuild.extensions.BuildExtension> {
@@ -43,20 +41,15 @@ allprojects {
             metaModel.set(metaModelVersion)
         }
         pom {
-            scmUrl.set(scmConnection)
-            scmConnection.set(scmConnection)
+            scmUrl.set("https://github.com/OWNER/REPO.git")
+            scmConnection.set("scm:git:git@github.com:OWNER/REPO.git")
+            developerName.set("yourcompany")
+            developerEmail.set("admin@yourcompany.com")
+            projectName.set("your cool project based on EDC")
+            projectUrl.set("www.coolproject.com")
+            description.set("your description")
+            licenseUrl.set("https://opensource.org/licenses/MIT")
         }
     }
 
-    configure<CheckstyleExtension> {
-        configFile = rootProject.file("resources/checkstyle-config.xml")
-        configDirectory.set(rootProject.file("resources"))
-    }
-
-    // EdcRuntimeExtension uses this to determine the runtime classpath of the module to run.
-    tasks.register("printClasspath") {
-        doLast {
-            println(sourceSets["main"].runtimeClasspath.asPath)
-        }
-    }
 }
