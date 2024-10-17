@@ -2,7 +2,7 @@
 format.version = "1.1"
 
 [versions]
-edc = "0.8.1"
+edc = "0.9.1"
 postgres = "42.7.4"
 
 # add here
@@ -53,7 +53,6 @@ edc-dataplane-api-control-client = { module = "org.eclipse.edc:control-plane-api
 edc-dataplane-selfregistration = { module = "org.eclipse.edc:data-plane-self-registration", version.ref = "edc" }
 edc-dataplane-http = { module = "org.eclipse.edc:data-plane-http", version.ref = "edc" }
 edc-dataplane-http-oauth2 = { module = "org.eclipse.edc:data-plane-http-oauth2", version.ref = "edc" }
-edc-dataplane-api-control = { module = "org.eclipse.edc:data-plane-control-api", version.ref = "edc" }
 edc-dataplane-api-public = { module = "org.eclipse.edc:data-plane-public-api-v2", version.ref = "edc" }
 edc-dataplane-api-signaling = { module = "org.eclipse.edc:data-plane-signaling-api", version.ref = "edc" }
 
@@ -97,8 +96,8 @@ controlplane = ["edc-controlplane-core", "edc-auth-tokenbased", "edc-auth-config
     "edc-controlplane-callback-dispatcher-http", "edc-identity-core-did", "edc-dcp-core", "edc-identity-trust-transform",
     "edc-api-control-configuration", "edc-lib-transform", "edc-identity-vc-ldp", "edc-did-web", "edc-lib-jws2020", "edc-core-edrstore", "edc-edr-storereceiver"]
 
-dataplane = ["edc-dataplane-core", "edc-dataplane-api-control-config", "edc-dataplane-api-control-client", "edc-dataplane-selfregistration",
-    "edc-dataplane-http", "edc-dataplane-http-oauth2", "edc-dataplane-api-control", "edc-dataplane-api-public", "edc-dataplane-api-signaling"]
+dataplane = ["edc-boot", "edc-http", "edc-dataplane-core", "edc-dataplane-api-control-config", "edc-dataplane-api-control-client", "edc-dataplane-selfregistration",
+    "edc-dataplane-http", "edc-dataplane-http-oauth2", "edc-dataplane-api-public", "edc-dataplane-api-signaling"]
 
 sql-controlplane = ["edc-sql-assetindex", "edc-sql-contractdef", "edc-sql-contractneg", "edc-sql-policydef", "edc-sql-edrcache", "edc-sql-transferprocess", "edc-sql-dataplane-instancestore","edc-sql-core", "edc-sql-lease", "edc-sql-pool", "edc-sql-transactionlocal", "postgres"]
 sql-dataplane = ["edc-sql-accesstokendata", "edc-sql-dataplane", "edc-sql-core", "edc-sql-lease", "edc-sql-pool", "edc-sql-transactionlocal", "edc-sql-dataplane-instancestore", "postgres"]
