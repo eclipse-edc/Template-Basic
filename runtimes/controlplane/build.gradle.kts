@@ -44,17 +44,10 @@ plugins {
 
 dependencies {
     runtimeOnly(project(":extensions:example-extension"))
-    runtimeOnly(libs.edc.spi.core) // we need some constants
-
-    runtimeOnly(libs.bundles.controlplane)
-    runtimeOnly(libs.edc.core.connector)
-
-    runtimeOnly(libs.bundles.dpf)
-    runtimeOnly(libs.edc.api.version)
+    runtimeOnly(libs.edc.bom.controlplane)
     // uncomment the following lines to compile with Hashicorp Vault and Postgres persistence
     // runtimeOnly(libs.edc.vault.hashicorp)
-    // runtimeOnly(libs.bundles.sql.controlplane)
-
+    // runtimeOnly(libs.edc.bom.controlplane.sql)
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
