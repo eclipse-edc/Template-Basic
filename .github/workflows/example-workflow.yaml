@@ -88,6 +88,9 @@ jobs:
             -e "WEB_HTTP_CONTROL_PATH=/api/v1/resolution/" \
             -e "WEB_HTTP_PORT=8080" \
             -e "WEB_HTTP_PATH=/api" \
+            -e "EDC_IAM_STS_OAUTH_TOKEN_URL=test.com/token" \
+            -e "EDC_IAM_STS_OAUTH_CLIENT_ID=client-id" \
+            -e "EDC_IAM_STS_OAUTH_CLIENT_SECRET_ALIAS=test-alias" \
             controlplane
       - name: Wait for ControlPlane to be healthy
         uses: raschmitt/wait-for-healthy-container@v1

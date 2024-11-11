@@ -43,14 +43,11 @@ plugins {
 }
 
 dependencies {
-    runtimeOnly(libs.edc.api.observability)
-    runtimeOnly(libs.bundles.dataplane)
-    runtimeOnly(libs.edc.jsonld) // needed by the DataPlaneSignalingApi
-    runtimeOnly(libs.edc.dpf.selector.client) // for the selector service -> self registration
+    runtimeOnly(libs.edc.bom.dataplane)
 
     // uncomment the following lines to compile with Hashicorp Vault and Postgres persistence
     // runtimeOnly(libs.edc.vault.hashicorp)
-    // runtimeOnly(libs.bundles.sql.dataplane)
+    // runtimeOnly(libs.edc.bom.dataplane.sql)
 
 }
 
